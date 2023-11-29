@@ -28,8 +28,11 @@ app.use("/likes", likesRouter);
 
 app.use("/uploads", express.static("uploads"));
 
-db.sequelize.sync().then(() => {
-  app.listen(process.env.PORT || 3000, () => {
-    console.log("server running");
-  });
-});
+db.sequelize
+  .sync()
+  .then(() => {
+    app.listen(process.env.PORT || 3000, () => {
+      console.log("server running");
+    });
+  })
+  .catch((err) => console.log(err));

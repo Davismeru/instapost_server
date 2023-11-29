@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { users, posts } = require("../models");
 const multer = require("multer");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const saltRounds = 10;
 
 // profile picture upload
