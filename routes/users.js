@@ -86,7 +86,7 @@ router.get("/search/:searchedName", async (req, res) => {
   const searchedName = req.params.searchedName;
   const allUsers = await users.findAll();
   const getUsers = allUsers.filter((user) => {
-    if (user.userName.includes(searchedName)) {
+    if (user.userName.toLowerCase().includes(searchedName.toLowerCase())) {
       return user;
     }
   });
